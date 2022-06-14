@@ -11,21 +11,26 @@ import graph.multiThread.design.chapter01.UserThread;
  */
 public class Chapter01Main {
 
-    // 1-1
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
+        func6();
+    }
+
+    // 习题1-6
+    public static void func6() {
+        System.out.println("Testing EaterThread, hit CRTL+C to exit");
+        Tool spoon = new Tool("Spoon");
+        Tool fork = new Tool("Fork");
+        new EaterThread("Alice", spoon, fork).start();
+        new EaterThread("Bobby", fork, spoon).start();
+    }
+
+    // 习题1-1
+    public static void func1() {
         System.out.println("Testing Gate, hit CRTL+C to exit");
         Gate gate = new Gate();
         new UserThread(gate, "Alice", "Alaska").start();
         new UserThread(gate, "Bobby", "Brazil").start();
         new UserThread(gate, "Chris", "Canada").start();
-    }*/
-
-    // 习题1-6
-    public static void main(String[] args) {
-        System.out.println("Testing EaterThread, hit CRTL+C to exit");
-        Tool spoon = new Tool("Spoon");
-        Tool fork = new Tool("Fork");
-        new EaterThread("Alice", spoon, fork).start();
-        new EaterThread("Bobby", spoon, fork).start();
     }
+
 }
